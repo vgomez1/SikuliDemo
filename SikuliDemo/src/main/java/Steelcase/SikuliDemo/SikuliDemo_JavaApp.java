@@ -5,14 +5,12 @@ package Steelcase.SikuliDemo;
 import java.util.concurrent.TimeUnit;
 
 import org.joda.time.DateTime;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.sikuli.api.Region;
 import org.sikuli.script.FindFailed;
-import org.sikuli.script.Location;
 import org.sikuli.script.Pattern;
+
 
  
 import org.sikuli.script.Screen;

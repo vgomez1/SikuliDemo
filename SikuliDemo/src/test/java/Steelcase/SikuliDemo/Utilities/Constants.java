@@ -11,12 +11,6 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-
-import com.relevantcodes.extentreports.LogStatus;
 
 public class Constants {
 	public static final String path_chromedriver = "C:\\workspaceV\\Libraries\\chromedriver_win32\\chromedriver.exe";

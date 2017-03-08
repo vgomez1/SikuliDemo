@@ -17,7 +17,12 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/vgomez1/git/gitSikuli/SikuliDemo/sikuli-api-1.2.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/vgomez1/git/gitSikuli/SikuliDemo/sikulixapi.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
