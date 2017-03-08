@@ -16,6 +16,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 public class Constants {
 	public static final String path_chromedriver = "C:\\workspaceV\\Libraries\\chromedriver_win32\\chromedriver.exe";
 	
@@ -25,6 +27,10 @@ public class Constants {
 	//credentials
 	public static final String loginEmail = "sa_testid@steelcase.com";
 	public static final String loginPwd = "Steelcase1";
+	
+	//report path
+	public static final String reportPath = "./Reports/report.htm";
+	public static final String screenshotsPath = "\\screenshots\\screenshot.png";
 	
 	//images path 
 	public static final String path_imgLoginRegister = "\\image_repository\\lnk_LoginRegister.PNG";
@@ -44,13 +50,16 @@ public class Constants {
 	public static final String path_imgCobi = "\\image_repository\\cobi.png";
 	public static final String path_imgCobiWhite = "\\image_repository\\img_CobiWhite.PNG";
 	
-	
-	public static void takeScreenShot(WebDriver driver) throws IOException, HeadlessException, AWTException{
-//		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//		// Now you can do whatever you need to do with it, for example copy somewhere
-//		FileUtils.copyFile(scrFile, new File("C:\\workspaceV\\SikuliDemo\\screnshots\\screenshot.png"));
+	public static void takeScreenshot() throws HeadlessException, AWTException, IOException{
+		{
+//			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//			// Now you can do whatever you need to do with it, for example copy somewhere
+//			FileUtils.copyFile(scrFile, new File("C:\\workspaceV\\SikuliDemo\\screnshots\\screenshot.png"));
 		
-		BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-		ImageIO.write(image, "png", new File("C:\\workspaceV\\SikuliDemo\\screenshots\\screenshot.png"));
+			BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+			ImageIO.write(image, "png", new File(screenshotsPath));
+		}
 	}
+	
+	
 }

@@ -16,7 +16,7 @@ import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 
 import Steelcase.SikuliDemo.Utilities.Constants;
-
+import Steelcase.SikuliDemo.Utilities.Report;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -34,6 +34,12 @@ public class SikuliDemo_Cucumber {
 	
 	@Given("^steelcase store home page$")
 	public void steelcase_store_home_page() {
+		//create Extent Reports file
+		Report.createReport(Constants.reportPath);
+		Report.startTest("SikuliDemo_CucumberTest");
+		Report.logInfo("Opening browser");
+		
+		
 		System.setProperty("webdriver.chrome.driver", Constants.path_chromedriver);
         driver = new ChromeDriver();
         driver.get(Constants.URL);
@@ -45,7 +51,7 @@ public class SikuliDemo_Cucumber {
 	@When("^type cobi on the search field and press Enter$")
 	public void type_cobi_on_the_search_field_and_press_Enter() {
 	   	
-	    	
+	    	Report.logInfo("Searching for cobi");
 	    		WebElement searchField = driver.findElement(By.id("search-field"));
 	    		System.out.println("Searching for cobi...");
 	    		searchField.sendKeys("Cobi");
@@ -57,11 +63,13 @@ public class SikuliDemo_Cucumber {
 	@Then("^the catalog page should appear showing a blue cobi chair in the first option$")
 	public void the_catalog_page_should_appear_showing_a_blue_cobi_chair_in_the_first_option() throws IOException, HeadlessException, AWTException {
 		if(screen.exists(imgCobi) != null){
+			Report.logPass("Cobi image found");
 			System.out.println("Cobi image found...");
 		}
 		else{
+			Report.logFail("Cobi image not found");
 			System.out.println("ERROR: Cobi image not found...");
-			Constants.takeScreenShot(driver);
+			Constants.takeScreenshot();
 		}
 				
 	}
@@ -73,6 +81,7 @@ public class SikuliDemo_Cucumber {
 
 	@When("^click on cobi link or cobi image \\(if available\\)$")
 	public void click_on_cobi_link() throws Throwable {
+		Report.logInfo("Click on Cobi image");
 		System.out.println("Click on Cobi image...");
 //		driver.findElement(By.xpath("//*[@id=\"collateral-tabs\"]/dd[1]/div/div[2]/ul/li[1]/div[1]/a/img")).click();
 		screen.click(imgCobi);    		
@@ -83,11 +92,13 @@ public class SikuliDemo_Cucumber {
 	public void the_user_is_redirected_to_the_cobi_chair_page() throws Throwable{
 		screen.wait(imgCobiWhite, 10);
 		if(screen.exists(imgCobiWhite) != null){
+			Report.logPass("White cobi image found");
 			System.out.println("White cobi image found...");
 		}
 		else{
+			Report.logFail("White cobi image not found");
 			System.out.println("ERROR: White cobi image not found...");
-			Constants.takeScreenShot(driver);
+			Constants.takeScreenshot();
 		}
 	}
 
@@ -101,10 +112,11 @@ public class SikuliDemo_Cucumber {
 @When("^clicking on the thumbnail of red cobi$")
 public void clicking_on_the_thumbnail_of_red_cobi() throws Throwable {
 	WebElement CobiRed_lnk= driver.findElement(By.xpath("//*[@id=\"product-image-0\"]/img"));
-
+	
 //	click on mini red cobi image
 //	if the red cobi image exist in the current visible screen 
-	System.out.println("Click on mini red cobi image...");
+	Report.logInfo("Click on red cobi thumbnail");
+	System.out.println("Click on red cobi thumbnail...");
 	CobiRed_lnk.click();
 	
 }
@@ -113,11 +125,13 @@ public void clicking_on_the_thumbnail_of_red_cobi() throws Throwable {
 @Then("^a bigger image of a red cobi appears$")
 public void a_bigger_image_of_a_red_cobi_appears() throws Throwable {
 	if(screen.exists(imgCobiRed) != null){
+		Report.logPass("Red Cobi image found");
 		System.out.println("Red cobi image found...");
 	}
 	else{
+		Report.logFail("Red cobi image not found");
 		System.out.println("ERROR: Red cobi image not found...");
-		Constants.takeScreenShot(driver);
+		Constants.takeScreenshot();
 	}
 }
 
@@ -127,7 +141,8 @@ public void clicking_on_the_thumbnail_of_blue_cobi() throws Throwable {
 		
 //	click on mini blue cobi image
 //	if the blue cobi image exist in the current visible screen 
-	System.out.println("Click on mini blue cobi image...");
+	Report.logInfo("Click on blue cobi thumbnail");
+	System.out.println("Click on blue cobi thumbnail...");
 	CobiBlue_lnk.click();
 
 	
@@ -136,12 +151,18 @@ public void clicking_on_the_thumbnail_of_blue_cobi() throws Throwable {
 @Then("^a bigger image of blue cobi appears respectively$")
 public void a_bigger_image_of_blue_cobi_appears_respectively() throws Throwable {
 	if(screen.exists(imgCobiBlue) != null){
-		System.out.println("Blue cobi image found...");
+		Report.logPass("Blue cobi image found");
+		System.out.println("Blue cobi image found...");	
 	}
 	else{
+		Report.logFail("Blue cobi image not found");
 		System.out.println("ERROR: Blue cobi image not found...");
-		Constants.takeScreenShot(driver);
+		Constants.takeScreenshot();
 	}
+	
+	Report.endTest();
 }
+
+
 
 }
