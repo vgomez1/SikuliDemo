@@ -23,6 +23,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/vgomez1/git/gitSikuli/SikuliDemo/sikuli-api-1.2.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/vgomez1/git/gitSikuli/SikuliDemo/sikulixapi.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vgomez1/git/gitSikuli/SikuliDemo/sikulixapi-1.1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
