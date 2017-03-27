@@ -88,6 +88,7 @@ public class SikuliDemo_TestNG
     		Report.logInfo("Click on Cobi");
     		System.out.println("Click on Cobi image...");
 //    		driver.findElement(By.xpath("//*[@id=\"collateral-tabs\"]/dd[1]/div/div[2]/ul/li[1]/div[1]/a/img")).click();
+    		driver.manage().timeouts().wait(3);
     		if(screen.exists(imgCobi) != null){
     			Report.logPass("Cobi image found");
     			System.out.println("Cobi image found...");	
@@ -101,8 +102,9 @@ public class SikuliDemo_TestNG
     			
     		}
     		
-    		WebElement CobiRed_lnk= driver.findElement(By.xpath("//*[@id=\"product-image-0\"]/img"));
-    		WebElement CobiBlue_lnk = driver.findElement(By.xpath("//*[@id=\"product-image-9999\"]/img"));
+    		driver.manage().timeouts().wait(3);
+    		WebElement CobiRed_lnk= driver.findElement(By.xpath(Constants.cobiRed_xpath));
+    		WebElement CobiBlue_lnk = driver.findElement(By.xpath(Constants.cobiBlue_xpath));
     		
     		
 //    		click on mini red cobi image
@@ -110,8 +112,7 @@ public class SikuliDemo_TestNG
     		Report.logInfo("Click on red cobi thumbnail");
     		System.out.println("Click on red cobi thumbnail...");
     		CobiRed_lnk.click();
-
-    		
+    		driver.manage().timeouts().wait(3);
     		if(screen.exists(imgCobiRed) != null){
     			Report.logPass("Red cobi image found");
     			System.out.println("Red cobi image found...");
@@ -124,9 +125,11 @@ public class SikuliDemo_TestNG
     		
 //    		click on mini blue cobi image
 //    		if the blue cobi image exist in the current visible screen 
+    		
     		Report.logInfo("Click on blue cobi thumbnail");   
     		System.out.println("Click on blue cobi thumbnail...");
-    		CobiBlue_lnk.click();    		 		
+    		CobiBlue_lnk.click();
+    		driver.manage().timeouts().wait(3);
     		if(screen.exists(imgCobiBlue) != null){
     			Report.logPass("Blue cobi image found");
     			System.out.println("Blue cobi image found...");

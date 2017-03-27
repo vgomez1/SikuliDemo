@@ -69,7 +69,7 @@ public class SikuliDemo_Cucumber {
 		else{
 			Report.logFail("Cobi image not found");
 			System.out.println("ERROR: Cobi image not found...");
-			Constants.takeScreenshot();
+			Report.getScreenshot();
 		}
 				
 	}
@@ -90,7 +90,9 @@ public class SikuliDemo_Cucumber {
 
 	@Then("^the user is redirected to the cobi chair page$")
 	public void the_user_is_redirected_to_the_cobi_chair_page() throws Throwable{
-		screen.wait(imgCobiWhite, 10);
+		try {
+			screen.wait(imgCobiWhite, 10);
+		
 		if(screen.exists(imgCobiWhite) != null){
 			Report.logPass("White cobi image found");
 			System.out.println("White cobi image found...");
@@ -98,7 +100,12 @@ public class SikuliDemo_Cucumber {
 		else{
 			Report.logFail("White cobi image not found");
 			System.out.println("ERROR: White cobi image not found...");
-			Constants.takeScreenshot();
+			Report.getScreenshot();
+			}
+		}
+		catch (Exception e) {
+			Report.logFail("ERROR: Exception occurred, Exception Message: " + e.getMessage());
+			Report.getScreenshot();
 		}
 	}
 
@@ -124,6 +131,7 @@ public void clicking_on_the_thumbnail_of_red_cobi() throws Throwable {
 
 @Then("^a bigger image of a red cobi appears$")
 public void a_bigger_image_of_a_red_cobi_appears() throws Throwable {
+	try{
 	if(screen.exists(imgCobiRed) != null){
 		Report.logPass("Red Cobi image found");
 		System.out.println("Red cobi image found...");
@@ -131,7 +139,11 @@ public void a_bigger_image_of_a_red_cobi_appears() throws Throwable {
 	else{
 		Report.logFail("Red cobi image not found");
 		System.out.println("ERROR: Red cobi image not found...");
-		Constants.takeScreenshot();
+		Report.getScreenshot();
+	}
+	}catch (Exception e) {
+		Report.logFail("ERROR: Exception occurred, Exception Message: " + e.getMessage());
+		Report.getScreenshot();
 	}
 }
 
@@ -150,6 +162,7 @@ public void clicking_on_the_thumbnail_of_blue_cobi() throws Throwable {
 
 @Then("^a bigger image of blue cobi appears respectively$")
 public void a_bigger_image_of_blue_cobi_appears_respectively() throws Throwable {
+	try{
 	if(screen.exists(imgCobiBlue) != null){
 		Report.logPass("Blue cobi image found");
 		System.out.println("Blue cobi image found...");	
@@ -157,10 +170,17 @@ public void a_bigger_image_of_blue_cobi_appears_respectively() throws Throwable 
 	else{
 		Report.logFail("Blue cobi image not found");
 		System.out.println("ERROR: Blue cobi image not found...");
-		Constants.takeScreenshot();
+		Report.getScreenshot();
+	}
+	}catch (Exception e) {
+		Report.logFail("ERROR: Exception occurred, Exception Message: " + e.getMessage());
+		Report.getScreenshot();
+	}
+	finally {
+		Report.endTest();
 	}
 	
-	Report.endTest();
+	
 }
 
 

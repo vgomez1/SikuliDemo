@@ -12,6 +12,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 
+
 public class Constants {
 	public static final String path_chromedriver = "C:\\workspaceV\\Libraries\\chromedriver_win32\\chromedriver.exe";
 	
@@ -43,6 +44,11 @@ public class Constants {
 	public static final String path_imgCobiRed = "\\image_repository\\img_CobiRed.png";
 	public static final String path_imgCobi = "\\image_repository\\cobi.png";
 	public static final String path_imgCobiWhite = "\\image_repository\\img_CobiWhite.PNG";
+	
+	//xpath 
+	public static final String cobiRed_xpath = "//*[@id=\"product-image-0\"]/img";
+	public static final String cobiBlue_xpath = "//*[@id=\"product-image-9999\"]/img";
+	
 	
 	public static void takeScreenshot() throws HeadlessException, AWTException, IOException{
 		{
