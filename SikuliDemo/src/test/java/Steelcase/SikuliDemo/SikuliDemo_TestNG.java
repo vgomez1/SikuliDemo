@@ -67,7 +67,7 @@ public class SikuliDemo_TestNG
 //		Specify the path 
 		Pattern imgCobi = new Pattern("/image_repository/cobi.png");
 		Pattern imgCobiBlue = new Pattern("/image_repository/img_CobiBlue.png");
-		Pattern imgCobiRed = new Pattern("/image_repository/imgCobiRed.png");
+		Pattern imgCobiRed = new Pattern("/image_repository/img_CobiRed.png");
 		
     	
     	try {
@@ -89,7 +89,7 @@ public class SikuliDemo_TestNG
     		Report.logInfo("Click on Cobi");
     		System.out.println("Click on Cobi image...");
 //    		driver.findElement(By.xpath("//*[@id=\"collateral-tabs\"]/dd[1]/div/div[2]/ul/li[1]/div[1]/a/img")).click();
-    		//driver.manage().timeouts().wait(3);
+    		//driver.manage().timeouts().wait(5);
     		if(screen.exists(imgCobi) != null){
     			Report.logPass("Cobi image found");
     			System.out.println("Cobi image found...");	
@@ -103,7 +103,7 @@ public class SikuliDemo_TestNG
     			
     		}
     		
-    		driver.manage().timeouts().wait(3);
+    		//driver.manage().timeouts().wait(3);
     		WebElement CobiRed_lnk= driver.findElement(By.xpath(Constants.cobiRed_xpath));
     		WebElement CobiBlue_lnk = driver.findElement(By.xpath(Constants.cobiBlue_xpath));
     		
@@ -113,7 +113,7 @@ public class SikuliDemo_TestNG
     		Report.logInfo("Click on red cobi thumbnail");
     		System.out.println("Click on red cobi thumbnail...");
     		CobiRed_lnk.click();
-    		driver.manage().timeouts().wait(3);
+    		//driver.manage().timeouts().wait(5);
     		if(screen.exists(imgCobiRed) != null){
     			Report.logPass("Red cobi image found");
     			System.out.println("Red cobi image found...");
@@ -130,7 +130,7 @@ public class SikuliDemo_TestNG
     		Report.logInfo("Click on blue cobi thumbnail");   
     		System.out.println("Click on blue cobi thumbnail...");
     		CobiBlue_lnk.click();
-    		driver.manage().timeouts().wait(3);
+    		//driver.manage().timeouts().wait(3);
     		if(screen.exists(imgCobiBlue) != null){
     			Report.logPass("Blue cobi image found");
     			System.out.println("Blue cobi image found...");
@@ -144,10 +144,10 @@ public class SikuliDemo_TestNG
     	
     	}
     	catch (Exception e){
-    		Report.logFatal("An unexpected error occurred: " + e.getMessage());
+    		Report.logFatal("An unexpected error occurred: " + e.toString());
     		Report.getScreenshot();
     		Constants.takeScreenshot();
-    		System.out.println("ERROR: " + e.getMessage());
+    		System.out.println("ERROR! Exception occurred:  " + e.toString());
     		
     	}
     	
@@ -159,6 +159,7 @@ public class SikuliDemo_TestNG
 		Report.endTest();
 		System.out.println("Test finished...");
 //		driver.quit();
+		driver.get(Constants.reportPath);
 	}
 	
 	

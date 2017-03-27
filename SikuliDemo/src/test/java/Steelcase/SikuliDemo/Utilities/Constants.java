@@ -24,7 +24,7 @@ public class Constants {
 	public static final String loginPwd = "Steelcase1";
 	
 	//report path
-	public static final String reportPath = "./Reports/report.htm";
+	public static final String reportPath =  System.getProperty("user.dir") + "/Reports/report.htm";
 	public static final String screenshotsPath = System.getProperty("user.dir") + "/screenshots/screenshot.png";
 
 

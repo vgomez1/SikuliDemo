@@ -104,7 +104,7 @@ public class SikuliDemo_Cucumber {
 			}
 		}
 		catch (Exception e) {
-			Report.logFail("ERROR: Exception occurred, Exception Message: " + e.getMessage());
+			Report.logFail("ERROR: Exception occurred while searching image of white cobi, Exception Message: " + e.toString());
 			Report.getScreenshot();
 		}
 	}
@@ -142,7 +142,7 @@ public void a_bigger_image_of_a_red_cobi_appears() throws Throwable {
 		Report.getScreenshot();
 	}
 	}catch (Exception e) {
-		Report.logFail("ERROR: Exception occurred, Exception Message: " + e.getMessage());
+		Report.logFail("ERROR: Exception occurred while searching image of red cobi, Exception Message: " + e.toString());
 		Report.getScreenshot();
 	}
 }
@@ -173,11 +173,13 @@ public void a_bigger_image_of_blue_cobi_appears_respectively() throws Throwable 
 		Report.getScreenshot();
 	}
 	}catch (Exception e) {
-		Report.logFail("ERROR: Exception occurred, Exception Message: " + e.getMessage());
+		Report.logFail("ERROR: Exception occurred while searching image of blue cobi, Exception Message: " + e.toString());
 		Report.getScreenshot();
 	}
 	finally {
 		Report.endTest();
+		driver.get(Constants.reportPath);
+		//driver.quit();
 	}
 	
 	
