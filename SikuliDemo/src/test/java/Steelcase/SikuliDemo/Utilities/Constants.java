@@ -25,7 +25,10 @@ public class Constants {
 	
 	//report path
 	public static final String reportPath = "./Reports/report.htm";
-	public static final String screenshotsPath = "\\screenshots\\screenshot.png";
+	public static final String screenshotsPath = System.getProperty("user.dir") + "/screenshots/screenshot.png";
+
+
+
 	
 	//images path 
 	public static final String path_imgLoginRegister = "\\image_repository\\lnk_LoginRegister.PNG";

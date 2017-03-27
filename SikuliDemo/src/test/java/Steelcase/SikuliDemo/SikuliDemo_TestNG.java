@@ -35,6 +35,7 @@ public class SikuliDemo_TestNG
 	@BeforeTest
 	public static void beforeTest(){
 		
+		
 		Report.createReport(Constants.reportPath);
 		Report.startTest("SikuliDemo_TestNG");
 		
@@ -64,9 +65,9 @@ public class SikuliDemo_TestNG
 		
 		Report.logInfo("Getting patterns");
 //		Specify the path 
-		Pattern imgCobi = new Pattern("\\image_repository\\cobi.png");
-		Pattern imgCobiBlue = new Pattern("\\image_repository\\img_CobiBlue.png");
-		Pattern imgCobiRed = new Pattern("\\image_repository\\imgCobiRed.png");
+		Pattern imgCobi = new Pattern("/image_repository/cobi.png");
+		Pattern imgCobiBlue = new Pattern("/image_repository/img_CobiBlue.png");
+		Pattern imgCobiRed = new Pattern("/image_repository/imgCobiRed.png");
 		
     	
     	try {
@@ -88,7 +89,7 @@ public class SikuliDemo_TestNG
     		Report.logInfo("Click on Cobi");
     		System.out.println("Click on Cobi image...");
 //    		driver.findElement(By.xpath("//*[@id=\"collateral-tabs\"]/dd[1]/div/div[2]/ul/li[1]/div[1]/a/img")).click();
-    		driver.manage().timeouts().wait(3);
+    		//driver.manage().timeouts().wait(3);
     		if(screen.exists(imgCobi) != null){
     			Report.logPass("Cobi image found");
     			System.out.println("Cobi image found...");	

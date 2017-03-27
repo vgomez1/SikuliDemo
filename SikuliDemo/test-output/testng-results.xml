@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20315" started-at="2017-03-27T18:07:40Z" finished-at="2017-03-27T18:08:01Z">
+  <suite name="Default suite" duration-ms="24460" started-at="2017-03-27T19:19:12Z" finished-at="2017-03-27T19:19:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20315" started-at="2017-03-27T18:07:40Z" finished-at="2017-03-27T18:08:01Z">
+    <test name="Default test" duration-ms="24460" started-at="2017-03-27T19:19:12Z" finished-at="2017-03-27T19:19:36Z">
       <class name="Steelcase.SikuliDemo.SikuliDemo_TestNG">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Steelcase.SikuliDemo.SikuliDemo_TestNG@527740a2]" name="beforeTest" is-config="true" duration-ms="14254" started-at="2017-03-27T12:07:40Z" finished-at="2017-03-27T12:07:55Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Steelcase.SikuliDemo.SikuliDemo_TestNG@527740a2]" name="beforeTest" is-config="true" duration-ms="14379" started-at="2017-03-27T13:19:12Z" finished-at="2017-03-27T13:19:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="main()[pri:0, instance:Steelcase.SikuliDemo.SikuliDemo_TestNG@527740a2]" name="main" duration-ms="5687" started-at="2017-03-27T12:07:55Z" finished-at="2017-03-27T12:08:00Z">
+        <test-method status="PASS" signature="main()[pri:0, instance:Steelcase.SikuliDemo.SikuliDemo_TestNG@527740a2]" name="main" duration-ms="9712" started-at="2017-03-27T13:19:26Z" finished-at="2017-03-27T13:19:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:Steelcase.SikuliDemo.SikuliDemo_TestNG@527740a2]" name="afterTest" is-config="true" duration-ms="345" started-at="2017-03-27T12:08:00Z" finished-at="2017-03-27T12:08:01Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Steelcase.SikuliDemo.SikuliDemo_TestNG@527740a2]" name="afterTest" is-config="true" duration-ms="348" started-at="2017-03-27T13:19:36Z" finished-at="2017-03-27T13:19:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

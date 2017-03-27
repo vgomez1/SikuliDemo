@@ -7,7 +7,6 @@
         <methods>
           <include name="beforeTest"/>
           <include name="main"/>
-          <include name="afterTest"/>
         </methods>
       </class> <!-- Steelcase.SikuliDemo.SikuliDemo_TestNG -->
     </classes>

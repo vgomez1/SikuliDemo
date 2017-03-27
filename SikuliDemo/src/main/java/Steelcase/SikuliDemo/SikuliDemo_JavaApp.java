@@ -21,6 +21,7 @@ public class SikuliDemo_JavaApp
 		 
 		// We have to create Screen class object to access method
 		 
+        
 		Screen screen = new Screen();
 		 
 		// Create object of Pattern class and specify the images path
@@ -76,14 +77,16 @@ public class SikuliDemo_JavaApp
         			+ DateTime.now().getDayOfMonth() + DateTime.now().getDayOfWeek()
         			+ DateTime.now().getHourOfDay() + DateTime.now().getMinuteOfHour()
         			+ "@steelcase.com");
+        	
+        	//scrolling down
+        	JavascriptExecutor jse = (JavascriptExecutor)driver;
+        	jse.executeScript("window.scrollBy(0,250)", "");
+        	
         	screen.type(imgPostalCode, "12345");
         	screen.type(imgPassword.targetOffset(0, 25), "Steelcase1");
         	screen.type(imgPwdConfirm, "Steelcase1");
         	
         	
-        	//scrolling down
-        	JavascriptExecutor jse = (JavascriptExecutor)driver;
-        	jse.executeScript("window.scrollBy(0,250)", "");
         	
         	//click on Submit
         	System.out.println("Clicking submit...");
